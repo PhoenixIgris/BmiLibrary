@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--
+~ Created by Diken Mhrz
+~  Copyright (c) 2021 Sunya Health Solution Pvt. Ltd . All rights reserved.
+~  Last modified 12/30/21, 11:37 AM
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/curved_background"
+    android:padding="10dp">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/personDetailLyt_photo_IV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        app:strokeColor="#f8f8f6"
+        app:strokeWidth="10dp"
+        tools:srcCompat="@drawable/avatar" />
+
+
+    <View
+        android:id="@+id/personDetailLyt_activeOrInActive_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/personDetailLyt_photo_IV"
+        app:layout_constraintEnd_toEndOf="@id/personDetailLyt_photo_IV"
+        app:layout_constraintHorizontal_bias="0.8535"
+        app:layout_constraintStart_toStartOf="@id/personDetailLyt_photo_IV"
+        app:layout_constraintTop_toTopOf="@id/personDetailLyt_photo_IV"
+        app:layout_constraintVertical_bias="0.1464"
+        tools:background="@drawable/ic_active_status" />
+
+    <TextView
+        android:id="@+id/personDetailLyt_name_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:letterSpacing="0.03"
+        android:textColor="@color/warm_gray_800"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/personDetailLyt_email_TV"
+        app:layout_constraintStart_toEndOf="@id/personDetailLyt_photo_IV"
+        app:layout_constraintTop_toTopOf="@id/personDetailLyt_photo_IV"
+        tools:text="James Bond Rik" />
+
+    <TextView
+        android:id="@+id/personDetailLyt_email_TV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:letterSpacing="0.03"
+        android:textColor="@color/warm_gray_600"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/personDetailLyt_photo_IV"
+        app:layout_constraintStart_toStartOf="@+id/personDetailLyt_name_TV"
+        app:layout_constraintTop_toBottomOf="@+id/personDetailLyt_name_TV"
+        tools:text="jamesbond@gmail.com" />
+
+    <TextView
+        android:id="@+id/personDetailLyt_seeDetails_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:gravity="center_vertical"
+        android:letterSpacing="0.03"
+        android:text="@string/see_details"
+        android:textColor="@color/warm_gray_600"
+        android:textSize="12sp"
+        app:drawableEndCompat="@drawable/ic_right_pointing_arrow_small"
+        app:layout_constraintBottom_toBottomOf="@+id/personDetailLyt_email_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/personDetailLyt_name_TV" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

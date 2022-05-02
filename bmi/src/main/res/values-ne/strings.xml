@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weight">तौल</string>
+    <string name="enter_weight">तौल प्रविष्टि गर्नुहोस्</string>
+    <string name="kg">केजी</string>
+    <string name="height">उचाइ</string>
+    <string name="enter_height">उचाइ प्रविष्ट गर्नुहोस्</string>
+    <string name="m">एम</string>
+    <string name="your_gender">तपाईंको लिङ्ग</string>
+    <string name="age">उमेर</string>
+    <string name="calculate_body_mass_index">बडी मास इन्डेक्स गणना गर्नुहोस्</string>
+    <string name="bmi_test">बीएमआई परीक्षण</string>
+    <string name="bmi_subtitle">शरीरमा आफ्नो BMI स्तर जाँच गर्न परीक्षण गर्नुहोस्</string>
+    <string name="bmi_not_calculated_for_others">BMI अन्य लिंगको लागि गणना गरिएको छैन। यो चाँडै उपलब्ध हुनेछ।</string>
+    <string name="weight_cant_400">वजन 400lbs भन्दा बढी हुन सक्दैन</string>
+    <string name="height_cant_100">उचाइ 100 इन्च भन्दा बढि हुनु हुँदैन</string>
+    <string name="height_cant_10">उचाई 10 इन्च भन्दा कम हुनु हुँदैन</string>
+    <string name="weight_cant_10">तौल १० पाउन्ड भन्दा कम हुन सक्दैन</string>
+    <string name="plz_enter_all_fields">कृपया क्षेत्रहरू प्रविष्ट गर्नुहोस्</string>
+    <string name="val_cant_be_less_zero">मानहरू ० भन्दा कम हुनु हुँदैन</string>
+    <string name="something_wrong_with_input">इनपुट फिलमा केहि गलत छ</string>
+    <string name="invalid_data">अवैध डाटा</string>
+    <string name="enter_age">Enter Age</string>
+</resources>

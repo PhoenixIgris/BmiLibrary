@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weight">Weight</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="kg">KG</string>
+    <string name="height">Height</string>
+    <string name="enter_height">Enter Height</string>
+    <string name="m">M</string>
+    <string name="your_gender">Your Gender</string>
+    <string name="age">Age</string>
+    <string name="calculate_body_mass_index">CALCULATE BODY MASS INDEX</string>
+    <string name="bmi_test">BMI Test</string>
+    <string name="bmi_subtitle">Test to check your BMI level in body</string>
+    <string name="bmi_not_calculated_for_others">BMI is not Calculated for other gender.It will be available very soon.</string>
+    <string name="weight_cant_400">Weight cannot be more than 400lbs</string>
+    <string name="height_cant_100">Height cannot be more than 100 inch</string>
+    <string name="height_cant_10">Height cannot be less than 10 inch</string>
+    <string name="weight_cant_10">Weight cannot be less than 10lbs</string>
+    <string name="plz_enter_all_fields">Please enter the fields</string>
+    <string name="val_cant_be_less_zero">Values cannot be less than 0</string>
+    <string name="something_wrong_with_input">Something wrong in input fill</string>
+    <string name="invalid_data">invalid data</string>
+    <string name="enter_age">Enter Age</string>
+</resources>

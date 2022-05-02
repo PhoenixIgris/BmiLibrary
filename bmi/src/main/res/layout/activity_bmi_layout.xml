@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:theme="@style/Theme.JivanSuchak"
+    tools:background="@color/app_background">
+
+    <include
+        android:id="@+id/person_detail_lyt"
+        layout="@layout/person_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/act_bmi_weight_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/act_bmi_weight_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#F2F3F7"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/weight"
+        android:textColor="@color/warm_gray_800"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/person_detail_lyt" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_bmi_weight_lyt"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="15dp"
+        android:background="#F2F3F7"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/act_bmi_weight_type_input_field"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_weight_TV">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_bmi_weight_input_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_weight"
+            android:inputType="number|numberDecimal"
+            android:maxLines="1"
+            android:textColorHint="#A1A4B2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_bmi_weight_type_input_field"
+        style="@style/TextInputLayoutStyleDropdown"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="#F2F3F7"
+        android:hint="@array/kg_lb"
+        app:endIconMode="dropdown_menu"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/act_bmi_weight_lyt"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_weight_TV">
+
+        <AutoCompleteTextView
+            android:id="@+id/act_bmi_weight_type_auto_TV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/kg"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/act_bmi_height_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/height"
+        android:textColor="@color/warm_gray_800"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_weight_lyt" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_bmi_height_input_lyt"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#F2F3F7"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/act_bmi_height_type_input_lyt"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_TV">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_bmi_height_editV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_height"
+            android:inputType="number|numberDecimal"
+            android:maxLines="1"
+            android:textColorHint="#A1A4B2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_bmi_height_type_input_lyt"
+        style="@style/TextInputLayoutStyleDropdown"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="#F2F3F7"
+        android:hint="@array/in_m"
+        app:endIconMode="dropdown_menu"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/act_bmi_height_input_lyt"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_TV">
+
+        <AutoCompleteTextView
+            android:id="@+id/act_bmi_height_type_input_autoTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/m"
+            android:inputType="none"
+            android:maxLines="1"
+            android:textColorHint="#A1A4B2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/act_bmi_choose_gender_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/your_gender"
+        android:textColor="@color/warm_gray_800"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_type_input_lyt" />
+
+    <ImageView
+        android:id="@+id/bmi_female_gender_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/bmi_card"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/bmi_male_gender_card"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_choose_gender_tv" />
+
+    <ImageView
+        android:id="@+id/bmi_female_gender_imgV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/female"
+        app:layout_constraintBottom_toBottomOf="@+id/bmi_female_gender_card"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/bmi_female_gender_card"
+        app:layout_constraintStart_toStartOf="@+id/bmi_female_gender_card"
+        app:layout_constraintTop_toTopOf="@+id/bmi_female_gender_card" />
+
+    <ImageView
+        android:id="@+id/bmi_male_gender_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/bmi_card"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/bmi_female_gender_card"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_choose_gender_tv" />
+
+    <ImageView
+        android:id="@+id/bmi_male_gender_imgV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_male"
+        app:layout_constraintBottom_toBottomOf="@+id/bmi_male_gender_card"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/bmi_male_gender_card"
+        app:layout_constraintStart_toStartOf="@+id/bmi_male_gender_card"
+        app:layout_constraintTop_toTopOf="@+id/bmi_male_gender_card" />
+
+    <TextView
+        android:id="@+id/act_bmi_age_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/age"
+        android:textColor="@color/warm_gray_800"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmi_female_gender_card" />
+
+    <TextView
+        android:id="@+id/act_bmi_age_value_TV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/edit_text_background"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_age_TV" />
+
+    <View
+        android:id="@+id/bmi_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="15dp"
+        android:background="#D4D4D4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_age_value_TV" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/act_bmi_calc_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingVertical="20dp"
+        android:shadowRadius="15"
+        android:text="@string/calculate_body_mass_index"
+        android:textColor="#FAFAF9"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmi_line" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
