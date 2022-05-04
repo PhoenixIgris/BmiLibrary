@@ -158,6 +158,9 @@ class MainBmiActivity : ActionBarActivity() {
             if (heightType == "IN") {
                 height *= 0.0254
             }
+            if (heightType == "FT") {
+                height *= 0.3048
+            }
 
 
             val bmivalue: Double = weight / (height * height)
