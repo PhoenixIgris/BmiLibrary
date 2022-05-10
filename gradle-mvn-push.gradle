@@ -1,0 +1,37 @@
+ext {
+    bmiProjectID = "35705270"
+    bmiDeployToken = "ecoQ6QyLCuqEpP6w8awL"
+}
+publishing {
+    publications {
+        library(MavenPublication) {
+            groupId "sunya.health"
+            artifactId "bmi"
+            version "1.0.1"
+            artifact "$buildDir/outputs/aar/bmi-release.aar"
+
+            // To include project dependencies
+            pom.withXml {
+                def dependencies = asNode().appendNode('dependencies')
+                configurations.getByName("releaseCompileClasspath").getResolvedConfiguration().getFirstLevelModuleDependencies().each {
+                    def dependency = dependencies.appendNode('dependency')
+                    dependency.appendNode('groupId', it.moduleGroup)
+                    dependency.appendNode('artifactId', it.moduleName)
+                    dependency.appendNode('version', it.moduleVersion)
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url "https://gitlab.com/api/v4/projects/$bmiProjectID/packages/maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Deploy-Token"
+                value = bmiDeployToken
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}

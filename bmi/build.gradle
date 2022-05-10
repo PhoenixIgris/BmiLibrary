@@ -9,6 +9,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: "$rootDir/gradle-mvn-push.gradle"
+
 android {
     compileSdk 32
 
