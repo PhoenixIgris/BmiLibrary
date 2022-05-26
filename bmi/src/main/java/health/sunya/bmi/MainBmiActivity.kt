@@ -121,11 +121,11 @@ class MainBmiActivity : ActionBarActivity() {
     }
 
     private fun setDropDown() {
-        val selectKgLb = resources.getStringArray(sunya.health.utils.R.array.kg_lb)
+        val selectKgLb = resources.getStringArray(R.array.kg_lb)
         val weightArrayAdapter =
             ArrayAdapter(this, sunya.health.utils.R.layout.drop_down_text_view, selectKgLb)
         binding.actBmiWeightTypeAutoTV.setAdapter(weightArrayAdapter)
-        val selectInM = resources.getStringArray(sunya.health.utils.R.array.in_m)
+        val selectInM = resources.getStringArray(R.array.in_m)
         val heightArrayAdapter =
             ArrayAdapter(this, sunya.health.utils.R.layout.drop_down_text_view, selectInM)
         binding.actBmiHeightTypeInputAutoTV.setAdapter(heightArrayAdapter)
@@ -157,6 +157,9 @@ class MainBmiActivity : ActionBarActivity() {
             }
             if (heightType == "IN") {
                 height *= 0.0254
+            }
+            if (heightType == "FT") {
+                height *= 0.3048
             }
 
 

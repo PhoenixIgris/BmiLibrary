@@ -21,4 +21,13 @@
     <string name="something_wrong_with_input">इनपुट फिलमा केहि गलत छ</string>
     <string name="invalid_data">अवैध डाटा</string>
     <string name="enter_age">Enter Age</string>
+    <string-array name="in_m">
+        <item>IN</item>
+        <item>M</item>
+        <item>FT</item>
+    </string-array>
+    <string-array name="kg_lb">
+        <item>KG</item>
+        <item>LB</item>
+    </string-array>
 </resources>
