@@ -170,7 +170,7 @@ class MainBmiActivity : ActionBarActivity() {
                 height = (height * 12 + heightPoint) * 0.0254
             }
             if (heightType == "M") {
-                height += heightPoint / 10
+                height += heightPoint / 100
             }
 
 
