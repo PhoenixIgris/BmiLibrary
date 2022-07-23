@@ -141,7 +141,12 @@ class MainBmiActivity : ActionBarActivity() {
             var height: Double = binding.actBmiHeightEditV.text.toString()
                 .toDouble()
             var heightPoint: Double =
-                (binding.actBmiHeightPointEditV.text ?: "0").toString().toDouble()
+                if (binding.actBmiHeightPointEditV.text.toString().isEmpty()) {
+                    0.0
+                } else {
+                    binding.actBmiHeightPointEditV.text.toString().toDouble()
+                }
+
             var weight: Double = binding.actBmiWeightInputField.text.toString().toDouble()
             val isfemale: Boolean = isFemale
 
