@@ -101,6 +101,7 @@
         android:background="#F2F3F7"
         app:endIconMode="clear_text"
         app:hintEnabled="false"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toStartOf="@+id/act_bmi_height_point_input_lyt"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +112,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/enter_height"
-            android:inputType="number|numberDecimal"
+            android:inputType="number"
+            android:digits="0123456789"
             android:maxLines="1"
             android:textColorHint="#A1A4B2" />
 
@@ -123,7 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito_semibold"
-        android:text="@string/height"
+        android:text="@string/m"
         android:textColor="@color/warm_gray_800"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/act_bmi_height_point_input_lyt"
@@ -132,12 +134,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_bmi_height_point_input_lyt"
         style="@style/TextInputLayoutStyle"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="#F2F3F7"
         app:endIconMode="clear_text"
         app:hintEnabled="false"
-        android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toStartOf="@+id/act_bmi_height_type_input_lyt"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/act_bmi_height_input_lyt"
@@ -147,8 +148,8 @@
             android:id="@+id/act_bmi_height_point_editV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/enter_height"
-            android:inputType="number|numberDecimal"
+            android:inputType="number"
+            android:digits="0123456789"
             android:maxLines="1"
             android:textColorHint="#A1A4B2" />
 
