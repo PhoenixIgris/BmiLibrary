@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toTopOf="@+id/act_bmi_weight_TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -98,11 +98,10 @@
         style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:background="#F2F3F7"
         app:endIconMode="clear_text"
         app:hintEnabled="false"
-        app:layout_constraintEnd_toStartOf="@+id/act_bmi_height_type_input_lyt"
+        app:layout_constraintEnd_toStartOf="@+id/act_bmi_height_point_input_lyt"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_TV">
@@ -118,19 +117,56 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/act_bmi_height_point_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/height"
+        android:textColor="@color/warm_gray_800"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/act_bmi_height_point_input_lyt"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_weight_lyt" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_bmi_height_point_input_lyt"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F2F3F7"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/act_bmi_height_type_input_lyt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/act_bmi_height_input_lyt"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_point_TV">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_bmi_height_point_editV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_height"
+            android:inputType="number|numberDecimal"
+            android:maxLines="1"
+            android:textColorHint="#A1A4B2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_bmi_height_type_input_lyt"
         style="@style/TextInputLayoutStyleDropdown"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:background="#F2F3F7"
         android:hint="@array/in_m"
         app:endIconMode="dropdown_menu"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/act_bmi_height_input_lyt"
-        app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_TV">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/act_bmi_height_point_input_lyt"
+        app:layout_constraintTop_toBottomOf="@+id/act_bmi_height_point_TV">
 
         <AutoCompleteTextView
             android:id="@+id/act_bmi_height_type_input_autoTV"
@@ -140,6 +176,7 @@
             android:hint="@string/m"
             android:inputType="none"
             android:maxLines="1"
+            android:layout_marginLeft="10dp"
             android:textColorHint="#A1A4B2" />
 
     </com.google.android.material.textfield.TextInputLayout>

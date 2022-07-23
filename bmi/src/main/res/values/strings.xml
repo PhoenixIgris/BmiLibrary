@@ -21,8 +21,9 @@
     <string name="something_wrong_with_input">Something wrong in input fill</string>
     <string name="invalid_data">invalid data</string>
     <string name="enter_age">Enter Age</string>
+    <string name="inch">INCH</string>
+    <string name="cm">CM</string>
     <string-array name="in_m">
-        <item>IN</item>
         <item>M</item>
         <item>FT</item>
     </string-array>

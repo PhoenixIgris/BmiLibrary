@@ -14,8 +14,6 @@ import sunya.health.utils.activity.ActionBarActivity
 import sunya.health.utils.constants.IntentParams.PATIENT_PARAM
 import sunya.health.utils.drawable.TextDrawable
 import sunya.health.utils.helper.DialogHelper
-import java.time.LocalDate
-import java.time.Period
 
 const val BMI_VALUE_INTENT = "BmiValue"
 
@@ -57,12 +55,6 @@ class MainBmiActivity : ActionBarActivity() {
         )
     }
 
-    private fun getAge(year: Int, month: Int, dayOfMonth: Int): Int {
-        return Period.between(
-            LocalDate.of(year, month + 1, dayOfMonth),
-            LocalDate.now()
-        ).years
-    }
 
     private fun getPatientDetails() {
         patient = JSONObject(intent.getStringExtra(PATIENT_PARAM)!!)
@@ -121,6 +113,7 @@ class MainBmiActivity : ActionBarActivity() {
     }
 
     private fun setDropDown() {
+        binding.actBmiHeightPointTV.text = getString(R.string.cm)
         val selectKgLb = resources.getStringArray(R.array.kg_lb)
         val weightArrayAdapter =
             ArrayAdapter(this, sunya.health.utils.R.layout.drop_down_text_view, selectKgLb)
@@ -129,13 +122,26 @@ class MainBmiActivity : ActionBarActivity() {
         val heightArrayAdapter =
             ArrayAdapter(this, sunya.health.utils.R.layout.drop_down_text_view, selectInM)
         binding.actBmiHeightTypeInputAutoTV.setAdapter(heightArrayAdapter)
+        binding.actBmiHeightTypeInputAutoTV.setOnItemClickListener { parent, view, position, id ->
+            when (position) {
+                0 -> {
+                    binding.actBmiHeightPointTV.text = getString(R.string.cm)
+                }
+                1 -> {
+                    binding.actBmiHeightPointTV.text = getString(R.string.inch)
+                }
+            }
+        }
     }
 
 
     private fun calculate() {
         if (checkInputFields()) {
             val age: Double = binding.actBmiAgeValueTV.text.toString().toDouble() * 12.0
-            var height: Double = binding.actBmiHeightEditV.text.toString().toDouble()
+            var height: Double = binding.actBmiHeightEditV.text.toString()
+                .toDouble()
+            var heightPoint: Double =
+                (binding.actBmiHeightPointEditV.text ?: "0").toString().toDouble()
             var weight: Double = binding.actBmiWeightInputField.text.toString().toDouble()
             val isfemale: Boolean = isFemale
 
@@ -155,11 +161,11 @@ class MainBmiActivity : ActionBarActivity() {
             if (weightType == "LB") {
                 weight *= 0.453592
             }
-            if (heightType == "IN") {
-                height *= 0.0254
-            }
             if (heightType == "FT") {
-                height *= 0.3048
+                height = (height * 12 + heightPoint) * 0.0254
+            }
+            if (heightType == "M") {
+                height += heightPoint / 10
             }
 
 
