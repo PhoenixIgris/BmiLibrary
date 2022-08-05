@@ -5,6 +5,10 @@ pluginManagement {
         mavenCentral()
     }
 }
+ext {
+    utilsProjectID = "35705199"
+    utilsDeployToken = "sMH11BpBSu8hWwzNPUg2"
+}
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -15,6 +19,17 @@ dependencyResolutionManagement {
             credentials(HttpHeaderCredentials) {
                 name = "Deploy-Token"
                 value = "b4K9BZzCmxepByL3sXZV"
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+
+        maven {
+            url "https://gitlab.com/api/v4/projects/$utilsProjectID/packages/maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Deploy-Token"
+                value = utilsDeployToken
             }
             authentication {
                 header(HttpHeaderAuthentication)
