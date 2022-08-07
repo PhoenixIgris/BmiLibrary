@@ -167,7 +167,7 @@ class MainBmiActivity : ActionBarActivity() {
                 weight *= 0.453592
             }
             if (heightType == "FT") {
-                heightString = "$height ft $heightPoint in"
+                heightString = "${height.toInt()} ft ${heightPoint.toInt()} in"
                 height = (height * 12 + heightPoint) * 0.0254
             }
             if (heightType == "M") {
@@ -179,7 +179,8 @@ class MainBmiActivity : ActionBarActivity() {
             val bmivalue: Double = weight / (height * height)
             if (age > 240.5 || age <= 24.0) {
                 val category = BmiCalculator.getSimpleBmiCategory(bmivalue)
-                val result = BmiCalculator.setBmiValues(age, weight, heightString, bmivalue, "", category)
+                val result =
+                    BmiCalculator.setBmiValues(age, weight, heightString, bmivalue, "", category)
                 setResults(result)
             } else {
                 if (weight > 180.0 || height > 2.5 || height < 0.254 || weight < 4.53) {
