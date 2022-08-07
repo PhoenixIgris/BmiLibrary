@@ -7,7 +7,7 @@ publishing {
         library(MavenPublication) {
             groupId "sunya.health"
             artifactId "bmi"
-            version "1.0.9"
+            version "2.0.0"
             artifact "$buildDir/outputs/aar/bmi-release.aar"
 
             // To include project dependencies

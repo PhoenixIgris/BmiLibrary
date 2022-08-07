@@ -140,13 +140,13 @@ class MainBmiActivity : ActionBarActivity() {
             val age: Double = binding.actBmiAgeValueTV.text.toString().toDouble() * 12.0
             var height: Double = binding.actBmiHeightEditV.text.toString()
                 .toDouble()
-            var heightPoint: Double =
+            val heightPoint: Double =
                 if (binding.actBmiHeightPointEditV.text.toString().isEmpty()) {
                     0.0
                 } else {
                     binding.actBmiHeightPointEditV.text.toString().toDouble()
                 }
-
+            var heightString = ""
             var weight: Double = binding.actBmiWeightInputField.text.toString().toDouble()
             val isfemale: Boolean = isFemale
 
@@ -167,9 +167,11 @@ class MainBmiActivity : ActionBarActivity() {
                 weight *= 0.453592
             }
             if (heightType == "FT") {
+                heightString = "$height ft $heightPoint in"
                 height = (height * 12 + heightPoint) * 0.0254
             }
             if (heightType == "M") {
+                heightString = getMeterToFeetInchString(height)
                 height += heightPoint / 100
             }
 
@@ -177,7 +179,7 @@ class MainBmiActivity : ActionBarActivity() {
             val bmivalue: Double = weight / (height * height)
             if (age > 240.5 || age <= 24.0) {
                 val category = BmiCalculator.getSimpleBmiCategory(bmivalue)
-                val result = BmiCalculator.setBmiValues(age, weight, height, bmivalue, "", category)
+                val result = BmiCalculator.setBmiValues(age, weight, heightString, bmivalue, "", category)
                 setResults(result)
             } else {
                 if (weight > 180.0 || height > 2.5 || height < 0.254 || weight < 4.53) {
@@ -215,7 +217,7 @@ class MainBmiActivity : ActionBarActivity() {
                         val result = BmiCalculator.readExcelData(
                             age,
                             weight,
-                            height,
+                            heightString,
                             isfemale,
                             bmivalue,
                             applicationContext
@@ -228,6 +230,13 @@ class MainBmiActivity : ActionBarActivity() {
             }
 
         }
+    }
+
+    private fun getMeterToFeetInchString(height: Double): String {
+        var inch = (height * 39.3701)
+        val feet: Int = (inch / 12).toInt()
+        inch %= 12
+        return "$feet ft ${inch.toInt()} in"
     }
 
 

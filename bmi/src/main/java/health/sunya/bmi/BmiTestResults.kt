@@ -5,6 +5,6 @@ data class BmiTestResults(
     val bmiPercentile: String = "",
     val bmiCategory: String,
     val age: Int,
-    val height: Double,
+    val height: String,
     val weight: Double,
     )

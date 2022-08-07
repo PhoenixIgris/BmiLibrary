@@ -7,7 +7,7 @@ object BmiCalculator {
     fun readExcelData(
         age: Double,
         weight: Double,
-        height: Double,
+        height: String,
         isFemale: Boolean?,
         bmiValue: Double?,
         context: Context
@@ -101,7 +101,7 @@ object BmiCalculator {
     fun setBmiValues(
         age: Double,
         weight: Double,
-        height: Double,
+        height: String,
         bmiValue: Double,
         percentile: String,
         category: String,
@@ -112,7 +112,7 @@ object BmiCalculator {
             bmiCategory = category,
             age = (age / 12.0).toInt(),
             weight = String.format("%.2f", weight).toDouble(),
-            height = String.format("%.2f", height * 3.28084).toDouble(),
+            height = height,
         )
     }
 }
