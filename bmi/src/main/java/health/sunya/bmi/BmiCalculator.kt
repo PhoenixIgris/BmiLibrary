@@ -80,7 +80,7 @@ object BmiCalculator {
                 test < 5.0 -> "Under Weight"
                 test >= 5.0 && test < 85.0 -> "Healthy Weight"
                 test >= 85.0 && test < 95.0 -> "Over Weight"
-                else -> "Obesity"
+                else -> "Obese"
             }
             return setBmiValues(age, weight, height, bmiValue, percentile, category)
         }
@@ -92,7 +92,7 @@ object BmiCalculator {
             bmivalue >= 18.5 && bmivalue < 25 -> "Healthy Weight"
             bmivalue >= 25 && bmivalue < 30 -> "Over Weight"
             bmivalue >= 30 && bmivalue < 35 -> "Obese (Class I)"
-            bmivalue >= 35 && bmivalue < 40 -> "Over (Class II)"
+            bmivalue >= 35 && bmivalue < 40 -> "Obese (Class II)"
             else -> "Obese (Class III)"
         }
         return category
